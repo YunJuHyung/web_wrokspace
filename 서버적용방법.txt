@@ -38,5 +38,6 @@ html 문서는 텍스트로 구성된 파일이고 이것을 브라우저가
 window preference 에서 server 사용하는 톰캣 버전으로 세팅
 
 이클립스에서 dynamic web project 생성 webapp 폴더에 index.html 가져오기
+서버 생성은 아래 Servers 탭에서 creater server로 생성 그후 폴더를 add 해준다.
 
 
