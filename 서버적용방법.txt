@@ -1,0 +1,42 @@
+07-24(월)
+1. 웹서비스 시작
++ 서버 프로그램 : 톰캣 (tomcat.apache.org)
+		ㄴ 설치 프로그램 또는 무설치(zip) 방식
++ 클라이언트 프로그램 : 브라우저(크롬)
+	ㄴ bin 폴더 startup.bat 로 서비스 시작
+		  shutdown.bat 로 서비스 종료합니다.
+		  conf -> server.xml
+		  ㄴ <Connector port="8082" protocol="HTTP/1.1"
+               		connectionTimeout="20000"
+               		redirectPort="8443"
+               		maxParameterCount="1000"
+               		/>
+			Connector prot 변경으로 톰캣 서버 주소 변경가능
+		logging.properties 
+		  ㄴ java.util.logging UTP-8 ▶ MS949로 한글 깨짐 수정가능
++ 웹서비스르 위해 서버의 주소 -> URL
+	예시1 => http://localhost:포트번호/examples/index.html
+		index.html은 서비스 요청에 대한 응답 페이지
+		샘플로 webapps 폴더 아래 examples 폴더에 있습니다.
+		확장자 html 은 정적인 컨텐츠.
+	
+	예시2 => http://localhost:포트번호/ 로 요청하면
+		ROOT 폴더 아래 index.jsp 가 기본적으로 보이도록 설정된것.
+		확장자 JSP는 동적인 컨텐츠 생성. 예시로 dbms 에서 데이터
+		조회 결과를 보여주는 등 내용ㅇ 사용자 요청에 따라 달라짐.
+		결과적 최종 응답은 html 형식으로 보냅니다.
+
++ 지금까지는 웹서버의 실행환경으로 실습했습니다. 개발환경은 이클립스에서
+톰캣을 사용하도록 설정을 해야합니다.
+
+2. 클라이언트가 서버에게 웹서비스를 요청한다.
+서버는 요청에 대한 응답으로 html 페이지(문서)를 전송해줍니다.
+html 문서는 텍스트로 구성된 파일이고 이것을 브라우저가
+랜더링을 해서 화면을 만들어 줍니다. 이미지, 디자인적인 요소를
+클라이언트는 화면으로 보게됩니다.
+
+window preference 에서 server 사용하는 톰캣 버전으로 세팅
+
+이클립스에서 dynamic web project 생성 webapp 폴더에 index.html 가져오기
+
+
