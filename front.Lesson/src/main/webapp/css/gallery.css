@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* class를 선택자로 할때는 기호 .을 사용합니다.  */
+
+
+main{
+	width: 70%;
+	margin: auto;
+}
+
+div.gallery{
+	border: 1px solid #ddd;
+	margin: 10px;
+	box-shadow: 5px 5px -3px gray;
+	float: left;
+}
+div.gallery:hover{
+	border: 1px solid #777;
+}
+.gallery img{
+	width: 200px;
+	height: 200px;
+	object-fit:cover;
+	/* 이미지 비율을 유지하면서 적정하게 지정된 크기로 보여줍니다. */
+	float: left;
+}
+
+div.desc{
+	width:200px;
+	height: 50;
+	padding: 10px;
+	text-align: center;
+	font-size: 80%;
+	/* 크기를 계산할때 너비와 높이가 padding, border를 포함하도록 합니다. */
+	box-sizing: border-box;
+}

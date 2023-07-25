@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS properties</title>
+<style type="text/css">
+	/*선택자는 태그 등 다양하 형식이 있습니다.*/
+	
+	/* th,td 태그에 설정하는 스타일 */
+	table {
+		border-collapse: collapse;
+		margin: auto;
+		margin-top:60px;
+	}
+	th,td{
+		border: 1px solid gray;
+		padding: 20px 10px;
+		text-align: center;
+		
+	}
+	th{
+		background-color: rgba(46,172,244,0.3);
+	}
+	td{
+		text-align: left;
+	}
+	td:nth-child(1) {
+		 text-align: center;
+	}
+	td:nth-child(2) {
+		 text-decoration: underline;
+	}
+	/* unvisited link */
+	a:link {
+	  color: red;
+	}
+	
+	/* visited link */
+	a:visited {
+	  color: rgb(46,172,244);
+	 }
+	
+	/* mouse over link */
+	a:hover {
+	  color: hotpink;
+	}
+	
+	/* selected link */
+	a:active {
+	  color: blue;
+	}
+	
+	h1{
+		display: flex;
+		justify-content: center;
+		text-shadow: 2px 2px 5px red;
+	}
+</style>
+</head>
+<body>
+	<table>
+         <tr>  <!-- style 태그에서 설정한 width 는 무시되고 태그의 값이 적용됩니다. 단,값이 작아지는 것은 적용 안됨.-->
+            
+            <h1>CSS properties</h1>
+           
+            <th>번호</th>
+            <th style="width:200px;">주요개념</th>
+            <th style="width:400px;">설명</th>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>1</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">CSS Syntax</a>
+            </td>
+            <td>선택기는 스타일을 지정할 HTML 요소를 가리킵니다.
+				선언 블록에는 세미콜론으로 구분된 하나 이상의 선언이 포함됩니다.
+				각 선언에는 콜론으로 구분된 CSS 속성 이름과 값이 포함됩니다.
+				여러 CSS 선언은 세미콜론으로 구분되며 선언 블록은 중괄호로 묶입니다.
+				</td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>2</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">CSS Colors</a></td>
+            <td>색상은 미리 정의된 색상 이름 또는 RGB, HEX, HSL, RGBA, HSLA 값을 사용하여 지정됩니다.</td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>3</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">CSS Background</a>
+            </td>
+            <td>CSS(Cascading Stylesheets – 종속형 스타일시트) 
+            CSS 배경 속성은 요소에 배경 효과를 추가하는 데 사용됩니다.
+            -RGBA를 사용해 불투명도를 직접적으로 설정할 수 있습니다.
+            </td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>4</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">CSS border-style</a>
+            </td>
+            <td>border-style의 다양한 예시<br>
+            <ul>
+	            <li>dotted- 점선 테두리를 정의합니다.</li>
+				<li>dashed- 점선 테두리를 정의합니다.</li>
+				<li>solid- 솔리드 테두리를 정의합니다.</li>
+				<li>none- 경계를 정의하지 않음</li>
+				<li>hidden- 숨겨진 테두리를 정의합니다.</li>
+            </ul>
+            </td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>5</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">margin</a>
+            </td>
+            <td>CSS margin속성은 정의된 테두리 외부의 요소 주위에 공간을 만드는 데 사용됩니다.
+            	CSS를 사용하면 여백을 완전히 제어할 수 있습니다. 요소의 각 면(위, 오른쪽, 아래, 왼쪽)에 여백을 설정하는 속성이 있습니다.
+            	<ul>
+		            <li>margin:auto = 자동으로 마진삽입</li>
+					<li>margin:top = 상단부 마진 삽입</li>
+					<li>margin:bottom = 하단 마진 삽입</li>
+					<li>margin:right = 우측 마진 삽입</li>
+					<li>margin:left = 좌측 마진 삽입</li>
+           		</ul></td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>5</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">CSS padding</a>
+            </td>
+            <td>CSS를 사용하면 패딩을 완전히 제어할 수 있습니다. 요소의 각 측면(상단, 오른쪽, 하단 및 왼쪽)에 대한 패딩을 설정하는 속성이 있습니다.
+            	<ul>
+		            <li>padding:auto = 자동으로 마진삽입</li>
+					<li>padding:top = 상단부 마진 삽입</li>
+					<li>padding:bottom = 하단 마진 삽입</li>
+					<li>padding:right = 우측 마진 삽입</li>
+					<li>padding:left = 좌측 마진 삽입</li>
+           		</ul></td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>6</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">width, height</a>
+            </td>
+            <td>높이 및 너비 속성에는 패딩, 테두리 또는 여백이 포함되지 않습니다. 요소의 패딩, 테두리 및 여백 내부 영역의 높이/너비를 설정합니다.
+            	<ul>
+		            <li>auto- 기본값입니다. 브라우저는 높이와 너비를 계산합니다.</li>
+					<li>length- 높이/너비를 px, cm 등으로 정의합니다.</li>
+					<li>%- 컨테이닝 블록의 백분율로 높이/너비를 정의합니다.</li>
+					<li>initial- 높이/너비를 기본값으로 설정합니다.</li>
+					<li>inherit- 높이/너비는 부모 값에서 상속됩니다.</li>
+           		</ul></td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>7</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">CSS Box Model</a>
+            </td>
+            <td>CSS에서 "상자 모델"이라는 용어는 디자인과 레이아웃을 말할 때 사용됩니다.
+				CSS 상자 모델은 기본적으로 모든 HTML 요소를 감싸는 상자입니다. 여백, 테두리,
+				 패딩 및 실제 콘텐츠로 구성됩니다. 아래 이미지는 상자 모델을 보여줍니다.
+            	<ul>
+		            <li>Contents - 텍스트와 이미지가 표시되는 상자의 콘텐츠</li>
+					<li>padding - 콘텐츠 주변 영역을 지웁니다. 패딩은 투명합니다</li>
+					<li>border - 패딩과 콘텐츠를 둘러싸는 테두리</li>
+					<li>margin - 테두리 밖의 영역을 지웁니다. 여백이 투명하다</li>
+           		</ul></td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>8</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">The display Property</a>
+            </td>
+            <td>속성은 display요소가 표시되는지 여부/방법을 지정합니다.
+            모든 HTML 요소에는 요소 유형에 따라 기본 표시 값이 있습니다. 
+            대부분의 요소에 대한 기본 표시 값은 block또는 입니다 inline.
+            	<ul>
+		            <li>div - 태그는 Division의 약자로, 레이아웃을 나누는데 주로 쓰입니다.</li>
+					<li>h1 - h6 - 태그는 제목을 구분지어주는 요소입니다.</li>
+					<li>p - 태그는 단락을 표기합니다.</li>
+					<li>header - 태그는 소개 콘텐츠의 컨테이너 또는 탐색 링크 집합을 나타냅니다.</li>
+					<li>footer - 태그는 문서 또는 섹션의 바닥글을 정의합니다.</li>
+					<li>section - 태그는h1 - h6 상위의 개념으로 단락의 구분을 정의합니다.</li>
+           		</ul></td>
+         </tr>
+         <tr>   <!-- tr:행(줄) -->
+            <td>9</td>      <!-- td:열(칸) -->
+            <td>
+            <a href="https://www.w3schools.com/css/default.asp">CSS table</a>
+            </td>
+            <td>HTML에서의 table모양을 만듭니다.<br>
+            	사용법 예시 : 
+            	table, th, td { border:
+				1px solid; }</td>
+         </tr>
+   </table>
+
+</body>
+</html>
