@@ -1,0 +1,22 @@
+@charset "UTF-8";
+dl {
+		border-collapse: collapse;
+		margin: auto;
+		margin-top:60px;
+	}
+	dt,dd{
+		border: 1px solid gray;
+		padding: 20px 10px;
+		text-align: center;
+	}
+	dt{
+		background-color: rgba(46,172,244,0.3);
+	}
+	dd{
+		text-align: left;
+	}
+	h3{
+		display: flex;
+		justify-content: center;
+		text-shadow: 2px 2px 5px red;
+	}

@@ -10,7 +10,7 @@ main{
 div.gallery{
 	border: 1px solid #ddd;
 	margin: 10px;
-	box-shadow: 5px 5px -3px gray;
+	box-shadow: 5px 5px 3px gray;
 	float: left;
 }
 div.gallery:hover{
