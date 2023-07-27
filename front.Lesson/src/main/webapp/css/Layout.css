@@ -1,68 +1,87 @@
 @charset "UTF-8";
-
-/* 블록요소의 width는 부모태그(기본화면)의 100%이다. 
+body {
+	box-sizing:border-box;
+	margin:0;
+	background-color: whitesmoke;
+}
+/* 블록요소의 width 는 기본이 화면의 100% , 
 height는 컨텐츠 크기 만큼. 높이는 padding으로 정하기*/
-
-html{
-		
-}
-body{
-	box-sizing: border-box;
-	display:flex;
-	margin: 0;
-}
-
-.header{
-	
-	align-items:center;
-	justify-content:center;
-	color: white;
+.header {
+	padding: 40px 20px;
 	background-color: orange;
+	color : white;
 }
-
-
-ul{
+/*
+.nav {
+}
+*/
+ul {
 	list-style: none;
 	background-color: brown;
-	margin: 0;
-	overflow : hidden;	
-	/* float 속성을 지정했을 때 필요합니다. */
+	margin : 0px;
+	/* 자식 li 에 float 속성을 지정헀을 때 필요합니다. */
+	overflow: hidden;
 }
-
-/* ul태그의 자손 */
-
-.nav a{
+ /* .nav 클래스 이름이 붙은 태그의 자손 */
+.nav a {
 	text-decoration: none;
-	padding: 20px;
+	padding : 20px;
 	display: inline-block;
-	color:white;
-}
-
-.nav li{
-	float: left;
-	/* float: 을 지정하면 부모 태그 ul의 노이가 0됩니다.
-	ul 태그 overflow를 설정하기 */
-}
-
-.section{
-	padding: 20px;
-	background-color: azure;
-	/* 컨텐츠 내용만큼 높이만 지정되는 것을 
-		최소 높이 지정하여 바꾸기 */
-	min-height: 400px
-}
-
-.footer{
-	
-	justify-content:center;
-	align-content:center;
-	padding: 20px;
-	background-color: cornflowerblue;
 	color : white;
-	font-size: 80%;
+}
+
+.nav li {
+	float: left;
+	/* float 을 지정하면 부모 태그 ul의 높이가 0이 됩니다.
+	   ul 태그 overflow 를 설정하기
+	 */
+}
+
+.section {
+	padding: 20px;
+	background-color: whitesmoke;
+		/* 컨텐츠 내용만큼 높이만 지정되는 것을 
+	   최소 높이 지정하여 바꾸기 */
+	min-height: 400px;
+}
+
+h3{
+	margin-top: 3em;
 	text-align: center;
 }
 
-h2{
+#divtable{
+		margin: auto;
+		margin-top:60px;
+		width: 80%;
+}
+
+
+
+tr,td{
+	border: 1px solid gray;
+	padding: 10px 10px;
+	min-height: 7%;
+}
+
+tr{
+	text-align: center;
+}
+
+
+td:nth-child(2n) {
+    text-align: left;
+}
+
+footer {
+	margin-top: 15.2em;
+	padding : 10px;
+	background-color: cornflowerblue;
+	color : white;
+	font-size : 80%;
+	text-align: center;
+}
+
+h2 {
 	text-align: center;
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Layout(외부평가)</title>
+	<link rel="stylesheet" href="../../css/Layout.css?v=3">
+	<link rel="stylesheet" href="../../css/Mem.css?v=3">
+</head>
+<body>
+	<div class="header">
+		<h2>홈쇼핑 회원관리 ver1.0</h2>
+	</div>
+	<div class="nav">
+	<!-- 반응형 웹페이지를 위해 메뉴는 목록 태그를 주로 사용합니다. 반응형 페이지 스타일은 레이아웃을 flexbox 사용해야 합니다.-->
+		<ul>
+		
+			<li><a href="">회원등록</a></li>
+			<li><a href="">회원목록조회/수정</a></li>
+			<li><a href="">회원매출조회</a></li>
+			<li><a href="">홈으로.</a></li>
+		</ul>	
+	</div>
+		<h3>홈쇼핑 회원 등록</h3>
+		<form action="" method="post">
+		<table id="divtable">
+		<tr>
+			<td><label for="lblNum">회원번호</label></td>
+			<td><input type="number" id="lblNum" name="num"></td>
+		</tr>
+		<tr>
+			<td><label for="lblName">회원성명</label></td>
+			<td><input type="text" id="lblName" name="name"></td>
+		</tr>
+		<tr>
+			<td><label for="lblCall">회원전화</label></td>
+			<td><input type="number" id="lblCall" name="call"></td>
+		</tr>
+		<tr>
+			<td><label for="lblAdress">회원주소</label></td>
+			<td><input type="text" id="lblAdress" name="adress"></td>
+		</tr>
+		<tr>
+			<td><label for="lblDate">가입일자</label></td>
+			<td><input type="number" id="lblDate" name="date"></td>
+		</tr>
+		<tr>
+			<td><label for="lblGrade">고객등급</label></td>
+			<td><input type="text" id="lblGrade" name="grade"></td>
+		</tr>
+		<tr>
+			<td><label for="lblRegion">도시코드</label></td>
+			<td><input type="number" id="lblRegion" name="region"></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<button>수정</button>
+				<!-- form태그 안에 있을때는 type=sibmit 생략됨 -->
+				<button type="reset">조회</button>
+			</td>
+		</tr>
+		</table>
+	</form>
+	<footer>HRDKOREA Copyright &copy;2022 ALL rights reserved. Human Resources Development Service
+			of Korea.</footer>
+</body>

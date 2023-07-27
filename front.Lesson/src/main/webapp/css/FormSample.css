@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@font-face{
+  font-family:'bitbit';
+  src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
+}
+body {
+	box-sizing: border-box;
+    font-family: 'bitbit', bitbit;
+}
+
+td:first-child > label{
+	background-color: #c69;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	width: 80%;
+	display: inline-block;
+	padding: 10px;
+}
+
+ 
+
+button {
+	padding: 7px 15px;
+	margin: 15px 7px;
+	background-color: rgb(194,14,104);
+	border: none;
+	color: white;
+	font-size: 1.1em;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: rgb(75,7,52);
+}
+
+tr:last-child > td{
+	text-align: center;	
+}
+
+/* 태그의 속성으로 선택자를 표기하는 방법은 [ ] 기호 사용 */
+input[type=text],input[type=password],input[type=email] {
+	width: 60%;
+}
+
+input,select {
+	padding: 6px;
+	border-radius: 6px;
+	border: 1px solid gray;
+}

@@ -1,90 +1,9 @@
 @charset "UTF-8";
 
-/* 블록요소의 width는 부모태그(기본화면)의 100%이다. 
-height는 컨텐츠 크기 만큼. 높이는 padding으로 정하기*/
-html{
-	box-sizing: border-box;
-	
-}
-body{
-	margin: 0;
+.section {
+    display: grid;
 }
 
-html,body{
-	margin:0;
-	height: 100%;
-}
-
-tr,th{
-	border: 1px solid gray;
-	padding: 20px 10px;
-	text-align: center;
-}
-
-table{
-		margin: auto;
-		width: 95%
-}
-
-.header{
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	background-color: orange;
+.memnum{
 	color: white;
-	height: 20%;
-}
-
-ul{
-	list-style: none;
-	background-color: brown;
-	margin: 0;
-	overflow : hidden;	
-	/* float 속성을 지정했을 때 필요합니다. */
-}
-
-/* ul태그의 자손 */
-
-.nav a{
-	text-decoration: none;
-	padding: 20px;
-	display: inline-block;
-	color:white;
-}
-
-.nav li{
-	float: left;
-	/* float: 을 지정하면 부모 태그 ul의 노이가 0됩니다.
-	ul 태그 overflow를 설정하기 */
-}
-
-.section{
-	padding: 20px;
-	background-color: whitesmoke;
-	height: 66%;
-}
-
-h2{
-	text-align: center;
-}
-
-h3{
-	text-align: center;
-	margin: 20px 10px 40px;
-}
-
-th.memnum{
-	color: white;
-}
-footer{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	background-color: cornflowerblue;
-	color : white;
-	font-size: 80%;
-	height:7rem;
-	position: fixed;
-	bottom:0;
-	width: 100%
 }
