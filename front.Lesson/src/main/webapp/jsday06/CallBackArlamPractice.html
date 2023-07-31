@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stopwatch with History</title>
+  <style>
+    /* Add your custom CSS styles here (optional) */
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Stopwatch</h1>
+    <p id="timeDisplay">00:00:00</p>
+    <button id="controlButton">Start</button>
+    <button id="resetButton">Reset</button>
+  </div>
+  <div>
+    <h2>History</h2>
+    <ul id="historyList">
+    </ul>
+  </div>
+
+  <script>
+//Get elements
+  const timeDisplay = document.getElementById('timeDisplay');
+  const controlButton = document.getElementById('controlButton');
+  const resetButton = document.getElementById('resetButton');
+  const historyList = document.getElementById('historyList');
+
+  let startTime;
+  let timerInterval;
+  let history = [];
+
+  // Function to format time as HH:MM:SS
+  function formatTime(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+
+  // Function to update the time display
+  function updateTime() {
+    const currentTime = Date.now();
+    const elapsed = currentTime - startTime;
+    timeDisplay.textContent = formatTime(elapsed);
+  }
+
+  // Event listener for the controlButton (Start/Stop)
+  controlButton.addEventListener('click', function () {
+    if (controlButton.textContent === 'Start') {
+      // Start the stopwatch
+      startTime = Date.now() - (history.length > 0 ? history.reduce((sum, entry) => sum + entry, 0) : 0);
+      timerInterval = setInterval(updateTime, 1000);
+      controlButton.textContent = 'Stop';
+    } else {
+      // Stop the stopwatch
+      clearInterval(timerInterval);
+      const currentTime = Date.now();
+      const elapsed = currentTime - startTime;
+      history.push(elapsed);
+      const listItem = document.createElement('li');
+      listItem.textContent = `Stopwatch time: ${formatTime(elapsed)}`;
+      historyList.appendChild(listItem);
+      controlButton.textContent = 'Start';
+    }
+  });
+
+  // Event listener for the resetButton
+  resetButton.addEventListener('click', function () {
+    // Reset the stopwatch
+    clearInterval(timerInterval);
+    timeDisplay.textContent = '00:00:00';
+    controlButton.textContent = 'Start';
+    history = [];
+    historyList.innerHTML = '';
+  });
+
+  </script>
+</body>
+</html>

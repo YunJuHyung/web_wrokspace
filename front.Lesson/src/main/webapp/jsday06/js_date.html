@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 날짜</title>
+</head>
+<body>
+<h3>자바스크립트 날짜</h3>
+
+<script type="text/javascript">
+	console.log('1.현재날짜와 시간')
+	console.log(new Date())
+	console.log('2.날짜를 직접 지정')
+	console.log(new Date(2023,8,15))
+	console.log(new Date('2023-8-14'))
+	console.log('3. 날짜와 시간')
+	console.log(new Date(2023,8,15,11,23,45))
+	console.log(new Date('2023-8-14 11:23:45'))
+	console.log('4. 세계 표준시간 - UTC')
+	console.log(new Date().toUTCString())
+	console.log('5. 세계 표준시간 - ISO')
+	console.log(new Date().toISOString())   // 표준시간마다 출력형식 다릅니다.
+	console.log('6. 현지(로컬.운영체제) 시간 - UTC')
+	console.log(new Date().toLocaleString())   //출력 형식 다름.
+	console.log('7. long 타입 시간값 (1970년1월1일 0시기준 ms 단위)')
+	console.log(new Date().getTime())
+	console.log('8. 날짜 및 시간 관련 메소드')
+	let today = new Date()
+	console.log('8-1) 년도 : ' + today.getFullYear())
+	console.log('8-2) 월 : ' + today.getMonth())
+	console.log('8-3) 일 : ' + today.getDay())
+	console.log('8-4) 시 : ' + today.getHours())
+	console.log('8-5) 분 : ' + today.getMinutes())
+	console.log('8-6) 초 : ' + today.getMilliseconds())
+	console.log('9. 날짜 변경 메소드')
+	today.setFullYear(today.getFullYear()+3)
+	console.log('1)3년 후 날짜 : ' + today)
+	today = new Date();
+	today.setFullYear(today.getFullYear()-3)
+	console.log('1)3년 전 날짜 : ' + today)
+	
+	//여러분의 탄생일 기준 +10000일은?
+	let mybirth = new Date('1997-02-14')
+	console.log('3)나의 탄생일 : ' + mybirth.toLocaleDateString())
+	mybirth.setDate(mybirth.getDate()+10000)
+	console.log('4)나의 탄생일 + 10000일 : ' + mybirth.toLocaleDateString())
+	
+	mybirth = new Date('1997-02-14')
+	let diff = new Date() - mybirth		//Date() 값끼리 연산 결과는 ms
+	console.log('내가 태어난지 몇일되었을까요?' + diff + 'ms')
+	const $1day = 24*60*60*1000	//1일 = ?ms
+	console.log('내가 태어난지 몇일되었을까요?' + diff/$1day + '일')
+	console.log('내가 태어난지 몇일되었을까요?' + Math.ceil(diff/$1day) + '일')
+	//Math 의 메소드 : ceil(천장.올림), floor(바닥,내림), round(반올림) 는 실수를 정수로 변환
+	
+	//html 문서에 현재 날짜를 2023-07-31 로 출력해보세요. => document.write로 출력하세요
+	today = new Date();
+	let year = today.getFullYear()
+	let month = today.getMonth()+1
+	let dates = today.getDate()
+	
+	document.write(year + '-' + month + '-' + dates)
+	document.write('<br>')	
+	/* 자바스크립트 문자열 메소드에는 padStart, padEnd 메소드로 자리수를 맞출수 있습니다.
+		month 는 number 이므로 string으로 바꾼 후에 메소드 사용
+	*/
+	document.write(year + '-' + month.toString().padStart(2,'0') + '-' + dates)
+	document.write('<br>')	
+	month = (today.getMonth()+1).toString().padStart(2,'0')	//type이 string
+	//첫번째 괄호를 결과값은 number. 문자열로 바꾼후에 2자리수를 맞추기위해서 부족한 자리수는 0으로 채운다
+	dates = today.getDate().toString().padStart(2,'0')
+	let result = [year,month,dates].join('-')
+	document.write(result)
+	document.write('<br>')
+	//함수를 정의해보기. 날짜 date, 기호를 인자로 받아서 날짜 문자열 리턴. 예시: 2023-07-31
+	function dateFormat(vdate,symbol){
+		let years = vdate.getFullYear()
+		let month = vdate.getMonth().toString().padStart(2,'0')
+		let dates = vdate.getDate().toString().padStart(2,'0')
+		let result = [year,month,dates].join(symbol)
+		return result
+	}
+	//실행
+	document.write(dateFormat(new Date(2022,3,2),'/'))	// 	2022/03/02 출력하기
+</script>
+</body>
+</html>
+
+<!-- 자바스크립트의 배열 메소드를 10개 테스트 하기 (과제) -->

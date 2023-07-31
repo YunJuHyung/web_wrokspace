@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 함수</title>
+</head>
+<body>
+
+
+<h3>자바스크립트 함수</h3>
+<script type="text/javascript">
+//함수를 대입하는 변수는 const로 선언하는게 일반적입니다.
+//형식 1: 함수 정의를 변수애 대입. 변수명이 자동으로 함수이름.
+const myfunc1 = function(x){	//x는 매개변수 선언입니다.
+	document.write('myfunc1 실행<br>')
+	return x*11+22
+
+	}
+
+//형식 2: 변수에 대입없이 함수 선언
+	function myfunc2(x){
+	document.write('mufunc2 실행')
+	return x*11+23
+	}
+	
+//형식 :	화살표 함수(arrow function)
+	const myfunc3 = (x) =>{
+		document.write('myfunc3 실행')
+		return x*11+24
+	}
+	
+	
+	
+	//정의된 함수들 실행
+	let result=myfunc1(10)
+	document.write('result:' + result + '<br>')
+	document.write(`result:${result} <br>`) 
+	
+	//..백틱 기호를 사용하면 + 문자열 연계연산을 쉽게 할수 있습니다.
+	//출력하고 싶은 변수값은 ${} 안에 작성.${} 안에 작성.
+	document.write('함수 실행 끝')
+	</script>
+	</body>
+	</html>
