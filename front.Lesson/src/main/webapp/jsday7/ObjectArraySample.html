@@ -37,6 +37,7 @@
 		</tbody>
 	</table>
 	<button id="todoAddBtn">스케쥴 추가</button>
+	<button id="sortBtn">정렬 버튼</button>
 
 
 <script type="text/javascript">
@@ -51,6 +52,15 @@
 	const contentsTable = document.getElementById('contents');
 	
 	let result =''
+	setView()
+	/* 
+		const 로 선언한 함수는 호출하기 전에 미리 정의가 되어 있어야 합니다.
+		function 정의한 함수는 자바스크립트에서 함수 끌어올리기.(함수 hoisting).function 정의는 맨 앞으로
+		
+	*/
+	function setView(){
+		result=''
+	
 	schedules.forEach((obj)=>{
 		console.log(obj)
 		console.log(obj.time)
@@ -60,6 +70,8 @@
 	})
 	document.getElementById('contents').innerHTML=result
 	
+	
+	}// setView()end
 	/*
 	 schedules.forEach((schedule) => {
 		  const row = document.createElement('tr');
@@ -74,12 +86,25 @@
 		 const time3 = prompt('시간을 입력하세요');
 			const todo3 = prompt('할일을 입력하세요');
 			
+			const temp = {time:time3,todo:todo3}
+			schedules.push(temp)
+			
 			const row = document.createElement('tr');
 			const pushdata = 
 				`<td>${time3}</td>
 				<td>${todo3}</td>`
 			row.innerHTML = pushdata
 			document.getElementById('contents').appendChild(row)
+	});
+	document.getElementById('sortBtn').addEventListener('click',()=>{
+		schedules.sort((a,b) => {
+			if(a.time < b.time){
+				return -1
+			}else{
+				return 1
+			}
+		})
+		setView();
 	});
 	
 </script>
