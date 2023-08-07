@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dateFormSample</title>
+</head>
+<body>
+<form action="">
+	<label for="selectNight">숙박일수</label>
+	<select name="days" id="selectNight">
+		<option value="0">선택</option>
+		<option value="1">1박</option>
+		<option value="2">2박</option>
+		<option value="3">3박</option>
+		<option value="4">4박</option>
+	</select><br>
+	<label for="enterDate">입실날짜 :</label>
+	<input type="date" name="start" id="enterDate"><br>
+	<label for="endDate">퇴실날짜 :</label>
+	<input type="date" name="end" id="outDate"><br>
+</form>
+<!-- 1. 입실날짜는 오늘 날짜로 초기화 합니다.
+	 2. 퇴실날짜는 선택한 숙박일수 + 입실날짜로 합니다.  8/2 입실 + 3박 = 8/5
+	 3. 퇴실날짜는 select 태그에서 숙박일수 선택하면 계산해서 표시합니다.
+	 							ㄴ click , change 이벤트
+	 4. 입실날짜는 오늘 이전 날짜는 선택을 못하도록 해야합니다.(input 태그 min 속성)
+	    입실날짜는 오늘 ~ 3달 이후로만 설정할 수 있습니다.(input 태그 max 속성)	 
+	 **참고 : input type=date 인 경우 value 는 
+	 '년도4자리-월2자리-일2자리' 문자열로 설정**   							
+ -->
+<script type="text/javascript">
+//함수를 정의해보기. 날짜 Date, 기호를 인자로 받아서 날짜 문자열 리턴.
+const start = document.forms[0].start
+const end = document.forms[0].end
+const days = document.forms[0].days
+
+document.getElementById('selectNight').addEventListener('change',calculateEnd)
+
+document.getElementById('enterDate').addEventListener('change',calculateEnd)
+
+let today = new Date()
+start.value = dateFormat(today,'-')
+start.min = dateFormat(today,'-')
+today.setMonth(today.getMonth()+3)
+start.max = dateFormat(today,'-')
+
+function calculateEnd(){
+	console.log(start.value)
+	console.log(end.value)
+	console.log(days.value)
+	
+	let temp = new Date(start.value)
+	temp.setDate(temp.getDate() + Number(days.value))
+	console.log("퇴실날짜 : " + temp)
+	end.value = dateformat(temp,'-')
+	
+}
+
+
+
+function dateformat(vdate,symbol){
+	const year = vdate.getFullYear()
+	const month = ((vdate.getMonth()+1).toString().padStart(2,'0'))
+	const day = vdate.getDate().toString().padStart(2,'0')
+	let result = [year,month,day].join(symbol)
+	return result
+}
+
+</script>
+</body>
+</html>
