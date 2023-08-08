@@ -1,9 +1,12 @@
+<%@page import="sample.dto.MemberDto"%>
+<%@page import="sample.dao.MemberDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Layout(외부평가)</title>
-	<link rel="stylesheet" href="../../css/Layout.css?v=3">
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
 
@@ -21,11 +24,11 @@
 		</ul>	
 	</div>
 		<h3>홈쇼핑 회원 등록</h3>
-		<form action="" method="post">
+		<form action="RegisterSave.jsp" method="post">
 		<table id="divtable">
 		<tr>
 			<td><label for="lblNum">회원번호</label></td>
-			<td><input type="number" id="lblNum" name="custno"></td>
+			<td><input type="text" id="lblNum" name="custno"></td>
 		</tr>
 		<tr>
 			<td><label for="lblName">회원성명</label></td>
@@ -33,7 +36,7 @@
 		</tr>
 		<tr>
 			<td><label for="lblCall">회원전화</label></td>
-			<td><input type="number" id="lblCall" name="phone"></td>
+			<td><input type="text" id="lblCall" name="phone"></td>
 		</tr>
 		<tr>
 			<td><label for="lblAdress">회원주소</label></td>
@@ -41,7 +44,7 @@
 		</tr>
 		<tr>
 			<td><label for="lblDate">가입일자</label></td>
-			<td><input type="number" id="lblDate" name="joindate" disabled="disabled"></td>
+			<td><input type="text" id="lblDate" name="joindate" disabled="disabled"></td>
 		</tr>
 		<tr>
 			<td><label for="lblGrade">고객등급</label></td>
@@ -49,14 +52,14 @@
 		</tr>
 		<tr>
 			<td><label for="lblRegion">도시코드</label></td>
-			<td><input type="number" id="lblRegion" name="city"></td>
+			<td><input type="text" id="lblRegion" name="city"></td>
 		</tr>
 		
 		<tr>
 			<td colspan="2">
 				<button>등록</button>
 				<!-- form태그 안에 있을때는 type=sibmit 생략됨 -->
-				<button type="reset">조회</button>
+				<button type="button"   onclick="location.href='MemberList.jsp'">조회</button>
 			</td>
 		</tr>
 		</table>
@@ -64,3 +67,4 @@
 	<footer>HRDKOREA Copyright &copy;2022 ALL rights reserved. Human Resources Development Service
 			of Korea.</footer>
 </body>
+</html>

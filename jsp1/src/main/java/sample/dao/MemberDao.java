@@ -40,21 +40,23 @@ public class MemberDao {
 	         String grade = rs.getString(6);
 	         String city = rs.getString(7);
 	         result = new MemberDto(custno, custname, phone, address, joindate, grade, city);
+	         System.out.println(result);
 	      }
 	      return result;
 	   }
 	
 
-	public int insert(MemberDto member) throws SQLException {
+	public int insert(MemberDto dto) throws SQLException {
 		Connection con = OracleUtility.getConnection();
-		String sql = "insert into MEMBER_TBL_02 values(member_tbl_02_seq.nextval,?,?,?,sysdate,?,?)";
+		String sql = "insert into MEMBER_TBL_02 values(?,?,?,?,sysdate,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 
-		ps.setString(1, member.getCustname());
-		ps.setString(2, member.getPhone());
-		ps.setString(3, member.getAddress());
-		ps.setString(4, member.getGrade());
-		ps.setString(5, member.getCity());
+		ps.setInt(1, dto.getCustno());
+		ps.setString(2, dto.getCustname());
+		ps.setString(3, dto.getPhone());
+		ps.setString(4, dto.getAddress());
+		ps.setString(5, dto.getGrade());
+		ps.setString(6, dto.getCity());
 
 		int result = ps.executeUpdate();
 
@@ -88,13 +90,16 @@ public class MemberDao {
 
 	public int update(MemberDto member) throws SQLException {
 		Connection con = OracleUtility.getConnection();
-		String sql = "update MEMBER_TBL_02 set phone = ? , address = ? , grade = ? , city = ?" + "where custname = ?";
+		String sql = "update MEMBER_TBL_02 set custname = ? , phone = ? , address = ? , "
+				+ "grade = ? , city = ?" + " where custno = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, member.getPhone());
-		ps.setString(2, member.getAddress());
-		ps.setString(3, member.getGrade());
-		ps.setString(4, member.getCity());
-		ps.setString(5, member.getCustname());
+		ps.setString(1, member.getCustname());
+		ps.setString(2, member.getPhone());
+		ps.setString(3, member.getAddress());
+		ps.setString(4, member.getGrade());
+		ps.setString(5, member.getCity());
+		ps.setInt(6, member.getCustno());
+		
 
 		int result = ps.executeUpdate();
 

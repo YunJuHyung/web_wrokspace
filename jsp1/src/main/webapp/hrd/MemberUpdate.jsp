@@ -34,30 +34,30 @@
 		</ul>	
 	</div>
 		<h3>홈쇼핑 회원 등록</h3>
-		<form action="" method="post">
+		<form action="UpdateSave.jsp" method="post">
 		<table id="divtable">
 		<tr>
 			<td><label for="lblNo">회원번호</label></td>
 			<!-- MemberList.jsp 에서 보낸 파라미터를 받아 custno 변수에 저장합니다. 그리고 value에서 출력하기 -->
 			<td><input type="number" id="lblNo" name="customNo" value="<%=custno %>" disabled="disabled">
-				<!-- disabled로 설정된 것은 파라미터 전달이 안됩니다.readyonly로 바꾸세요. -->
+			<input type="hidden" name="customNo" value="<%=custno %>">
 			</td>
 		</tr>
 		<tr>
 			<td><label for="lblName">회원성명</label></td>
-			<td><input type="text" id="lblName" name="name" value="<%= dto.getCustname() %>"></td>
+			<td><input type="text" id="lblName" name="custname" value="<%=dto.getCustname()%>"></td>
 		</tr>
 		<tr>
 			<td><label for="lblCall">회원전화</label></td>
-			<td><input type="number" id="lblCall" name="call" value="<%=dto.getPhone() %>"></td>
+			<td><input type="text" id="lblCall" name="phone" value="<%=dto.getPhone() %>"></td>
 		</tr>
 		<tr>
 			<td><label for="lblAdress">회원주소</label></td>
-			<td><input type="text" id="lblAdress" name="adress" value="<%=dto.getAddress() %>"></td>
+			<td><input type="text" id="lblAdress" name="address" value="<%=dto.getAddress() %>"></td>
 		</tr>
 		<tr>
 			<td><label for="lblDate">가입일자</label></td>
-			<td><input type="number" id="lblDate" name="date" value="<%=dto.getJoindate() %>"></td>
+			<td><input type="text" id="lblDate" name="joindate" value="<%=dto.getJoindate() %>"></td>
 		</tr>
 		<tr>
 			<td><label for="lblGrade">고객등급</label></td>
@@ -65,7 +65,7 @@
 		</tr>
 		<tr>
 			<td><label for="lblRegion">도시코드</label></td>
-			<td><input type="number" id="lblRegion" name="region" value="<%=dto.getCity() %>"></td>
+			<td><input type="number" id="lblRegion" name="city" value="<%=dto.getCity() %>"></td>
 		</tr>
 		
 		<tr>

@@ -21,6 +21,11 @@ ul {
 	margin : 0px;
 	/* 자식 li 에 float 속성을 지정헀을 때 필요합니다. */
 	overflow: hidden;
+	
+}
+
+li{
+	display: inline-block;	
 }
  /* .nav 클래스 이름이 붙은 태그의 자손 */
 .nav a {
