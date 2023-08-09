@@ -35,5 +35,16 @@
 	2. jsp:param
 		ㄴ jsp:include 에서 포함시키는 jsp에 파라미터를 전달하기
 	jsp 안에서 내장객체를 이용하여 작성하는 자바코드 대신에 사용하는 태그
-	jsp: useBean 태그를 조사해서,
+	3. jsp: useBean 태그- 속성 id: 자바빈id. 변수명 , class : 자바빈(객체)으로 만들어질 패키지명 클래스 지정
+					scope : 4가지 자바빈즈가 사용될수 있는 영역 설정.(page, request, session, application)
+			ㄴ jsp:setProperty : 값 저장/ getParamerty메소드 + setter 메소드 실행
+					ㄴ 속성 종류 property : 자바빈을 만든 클래스으 필드(변수)이름
+								name : 자바빈 id 를 설정
+								param : input 태그의 name
+			jsp : getProperty : 출력
+	
+	
+	
+	
+	를 조사해서,
 	ResgisterSave.jsp 에서 사용해보세요.(getparameter 대신에 사용합니다.)

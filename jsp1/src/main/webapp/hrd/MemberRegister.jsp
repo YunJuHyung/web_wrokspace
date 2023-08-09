@@ -24,7 +24,7 @@
 		</ul>	
 	</div>
 		<h3>홈쇼핑 회원 등록</h3>
-		<form action="RegisterSave.jsp" method="post">
+		<form action="RegisterSave2.jsp" method="post">
 		<table id="divtable">
 		<tr>
 			<td><label for="lblNum">회원번호</label></td>

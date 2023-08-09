@@ -6,11 +6,11 @@ public class MyUser {
 	private String address;
 	
 	
-	public String getName() {
+	public String getUname() {
 		return uname;
 	}
-	public void setName(String name) {
-		this.uname = name;
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
 	public int getAge() {
 		return age;
@@ -23,6 +23,10 @@ public class MyUser {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "MyUser [uname=" + uname + ", age=" + age + ", address=" + address + "]";
 	}
 	
 }
