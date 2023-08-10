@@ -1,0 +1,24 @@
+1.JSTL = Java(S)erver (P)age Standard Tag Libarary
+1) core 태그:값 저장과 출력,실행 제어
+2) fmt 태그: format. 출력 포맷 설정하기
+				(숫자, 날짜 출력형식/ Locale 설정)
+3) fn : 함수.문자열 메소드를 함수형태로 사용하기
+		(자바의 문자열 메소드와 상당부분 일치)
+		
+2. EL : ${} 은 getAttribute로 값을 가져와서 출력한다.
+		애트리뷰트는 자바빈과 동일하게 4개의 scope 저장소에 보관되는 데이터.
+		 객체의 프로퍼티는 getter 메소드 없이 바로 가져온다.
+		 
+	 -EL 기본 객체
+	 	param: 요청매개변수 값 저장. 매개변수가 배열일때는 paramValues
+	 	cookies : 쿠키값 저장
+	 	pageContext : 현재 페이지의 정보 pageContext 객체
+	 	pageScope : page scope 데이터 저장소 지정.
+	 	requestScope : request scope 데이터 저장소 지정
+	 	sessionScope : session scope 데이터 저장소 지정
+	 	applicationScope : application scope 데이터 저장소 지정
+	 	※${}에서 scope 지정이 없으면 page --> request --> session --> application
+	 	※ 현재 jsp 페이지에서 request,session 객체를 el 로 사용하기 위해서는
+	 			ㄴ pageContext.request
+	 			ㄴ pageContext.session
+	 			

@@ -15,11 +15,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class JCustomDto {
+public class JCustomerDto {
 	private String custom_id;
 	private String name;
 	private String email;
 	private int age;
 	private Date reg_date;
+	private String password;
 
 }

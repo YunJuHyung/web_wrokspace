@@ -1,0 +1,6 @@
+select * from J_CUSTOM;
+
+select custom_id, name from J_CUSTOM where custom_id='mina012' and password='12345';
+commit;
+
+alter table j_custom modify password varchar2(64);
