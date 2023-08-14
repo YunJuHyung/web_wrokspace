@@ -43,7 +43,7 @@
 	out.print("session 최근요청 시간 :" + df.format(last));
 	out.print("<br>");
 	
-	//메소드로 timeout 변경하기
+	//메소드로 timeout 변경하기(web.xml에 설정된 timeout을 변경하는 메소드)
 	session.setMaxInactiveInterval(180);		//300초
 	session.setAttribute("session_user", "김땡땡");
 %>

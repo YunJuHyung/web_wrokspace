@@ -1,0 +1,29 @@
+파일업로드 
+
+1. 테스트 테이블 생성
+create table wproduct (
+	pname varchar2(40),
+	price number(9),
+	createAt date default sysdate,		-- createdAt 이 정상.
+	picture varchar2(50)	-- 상품이미지 파일명
+);
+
+2. dto
+3. mapper xml ** 새로운 sql mapper 파일은 반드시 mybatis-config.xml 에 알려주기
+4. dao
+
+*5. 파일업로드 인터페이스는 jsp의 input 태그 type="file"   -> upload 폴더 uploadForm.jsp
+
+*6. 서버에서 전송받을 파일 처리하기  -> upload 폴더 uploadAction.jsp
+- 전송받은 파일명은 db 테이블에 저장하고
+- 실제 파일은 D:/iclass0419/upload (파일서버 폴더)에 저장시키기. 폴더 없으면 만드세요.
+- 파일업로드에서는 일반적인 request 가 아닌 MultipartRequest 를 사용합니다.
+						--> 외부 라이브러리 필요합니다.(종류는 여러가지. cos.jar 사용)
+  다운로드 : mvnrepository.com
+
+*7. 상품 목록에 이미지 표시하기  -> productListAction.jsp(처리) 와 productListView.jsp(화면출력)
+
+
+
+
+
