@@ -1,0 +1,37 @@
+자바 서블릿(Java Servlet)은 자바를 사용하여 웹페이지를 동적으로 생성하는 
+서버측 프로그램 혹은 그 사양을 말하며, 흔히 "서블릿"이라 불린다. 
+자바 서블릿은 웹 서버의 성능을 향상하기 위해 사용되는 자바 클래스의 일종이다. 
+서블릿은 JSP와 비슷한 점이 있지만, 
+JSP가 HTML 문서 안에 Java 코드를 포함하고 있는 반면, 
+서블릿은 자바 코드 안에 HTML을 포함하고 있다는 차이점이 있다.
+
+1. 자바 서블릿 특징
+
+1) URL 매핑이 반드시 필요합니다. 요청을 받아 처리하는 것이 jsp가 아니고 자바 클래스이므로
+자바 클래스와 연결되는 url이 필요합니다.(url 설계는 프로젝트 시작할 때 합니다.)
+	방법 1) 어노테이션 사용 방법
+	방법 2) web.xml 에서 servlet 태그로 설정하기
+	
+2) 서블릿 클래스는 javax.servlet.http.HttpServlet 를 상속한다.
+
+3) 서블릿은 생명주기(life cycle) 가 있습니다. 이에 따른 메소드 동작
+- init() : 메모리에 없을 때 요청을 받았다면 초괴화 메소드로 가장 먼저 실행 됩니다.
+- service() : 요청이 오면 실행되는 메소드입니다.
+- doGet() :	 요청이 GET요청일때 실행하는 메소드.
+- doPost() :요청이 POST요청일때 실행하는 메소드.
+- destroy : 서블릿 종료요청이 있을때 destroy() 메소드가 실행됩니다.
+* 일반적으로 service() 만 사용하거나 또는 doGet(), doPost()를 사용합니다.
+
+4)service, doGet, doPost 메소드의 인자?
+	요청 발생시 기본적으로 생성되는 객체이므로 메소드로 전달해서 사용.
+		-> 메소드에서 사용할 때 그냥 사용하면 됩니다.
+	- HttpServletRequest request : 요청
+	- HttpServletResponse response : 응답
+	
+5) jsp 내장객체는 서블릿에서 직접 선언해서 사용합니다.
+	- session 은 HttpSession 객체로 선언
+	- out 은 PrintWriter 객체로 선언
+	
+6) 서블릿에서 pageContext.forward("test.jsp") 와 같은 코딩은 ???
+	ReqeustDispatcher dispatcher = request.ReqeustDispatcher("test.jsp);
+	dispatcher.forward(request, response);
