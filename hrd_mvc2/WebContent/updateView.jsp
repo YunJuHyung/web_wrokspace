@@ -1,4 +1,4 @@
-<%@page import="dao.MemberDao"%>
+<%@page import="org.iclass.dao.MemberDao"%>
 <%@page import="vo.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>   <!-- JSP 를 위한 설정 -->

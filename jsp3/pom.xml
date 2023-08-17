@@ -24,8 +24,6 @@
 	</build>
 	<!--mvnrepository.com-->
 	<dependencies>
-
-
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
@@ -76,7 +74,5 @@
 			<version>2.0.7</version>
 			<scope>test</scope>
 		</dependency>
-
-
 	</dependencies>
 </project>
