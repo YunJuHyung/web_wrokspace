@@ -2,6 +2,8 @@ package org.iclass.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.iclass.dto.CommunityComments;
+import org.iclass.dto.Community;
+
 import mybatis.SqlSessionBean;
 
 public class CommunityCommentsDao {

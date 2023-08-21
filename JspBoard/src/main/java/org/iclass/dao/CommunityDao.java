@@ -2,7 +2,9 @@ package org.iclass.dao;
 
 import java.util.List;
 import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
+import org.iclass.dto.CommunityComments;
 import org.iclass.dto.Community;
 
 import mybatis.SqlSessionBean;
@@ -68,6 +70,15 @@ public class CommunityDao {
 		mapper.close();
 		return result;
 	}
+	
+	public long insert(Community vo) {
+		SqlSession mapper = SqlSessionBean.getSession();
+		mapper.insert("commuinity.insert",vo);
+		mapper.commit();
+		mapper.close();
+		
+		return vo.getIdx();
+		}
 	
 	
 }
