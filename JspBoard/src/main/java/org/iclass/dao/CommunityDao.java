@@ -73,7 +73,7 @@ public class CommunityDao {
 	
 	public long insert(Community vo) {
 		SqlSession mapper = SqlSessionBean.getSession();
-		mapper.insert("commuinity.insert",vo);
+		mapper.insert("community.insert",vo);
 		mapper.commit();
 		mapper.close();
 		

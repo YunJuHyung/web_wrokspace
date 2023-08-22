@@ -20,13 +20,13 @@
  <table>
  	<tr><th>제목</th>
  		<td>
- 					<input type="text" name="title" size="50" value="${vo.title }">	
+ 					<input type="text" name="title" size="50">	
  			<!-- readonly : 입력불가 -->
  		</td>
  	</tr>
  	<tr>
 		<th>작성자</th>
- 		<td><input type="text" name="writer" size="50" value="${user.id }" disabled="disabled"></td>
+ 		<td><input type="text" name="writer" size="50" value="${user.id }"></td>
  		<!-- disabled : 입력 불가 + 파리미터 전송 못함. -->
  	</tr>
  	 <tr>

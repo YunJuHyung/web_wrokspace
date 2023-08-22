@@ -1,3 +1,4 @@
+<%@page import="org.iclass.dto.BookUser"%>
 <%@page import="org.iclass.dto.Community"%>
 <%@page import="org.iclass.dao.CommunityDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,7 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
+	<%BookUser user = (BookUser)session.getAttribute("user");
+	if(user==null)
+		throw new IllegalAccessException();
+	
 	int idx = 0;
 	int pageNo = 0;
 	if (request.getParameter("idx") != null) {
@@ -24,6 +28,9 @@
 	CommunityDao dao = CommunityDao.getInstance();
 	Community vo = dao.selectByIdx(idx); //idx 글 조회하기
 
+//	if(user.getId().equals(vo.getWriter()));
+//		throw new IllegalAccessException();
+	
 	//(1)
 	request.setAttribute("vo", vo);
 	//(2)

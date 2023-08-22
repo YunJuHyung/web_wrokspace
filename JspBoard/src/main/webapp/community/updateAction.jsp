@@ -11,7 +11,7 @@
 <body>
 <%
 	request.setCharacterEncoding("UTF-8");
-	String ip = request.getRemoteAddr();
+	String ip = request.getRemoteAddr();	//클라이언트 ip 가져오기
 	long idx = Long.parseLong(request.getParameter("idx"));
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
