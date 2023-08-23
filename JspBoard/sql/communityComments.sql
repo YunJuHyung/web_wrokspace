@@ -11,31 +11,35 @@ CREATE TABLE communityComments (
 );
 CREATE SEQUENCE comment_idx_seq;
 
+
+
 -- 댓글 테이블 데이터
 INSERT INTO communityComments (idx,mref,writer,content)
-VALUES (comment_idx_seq.nextval,3,'이하니','이글은 메인글 3번 댓글~');
+VALUES (comment_idx_seq.nextval,110,'이하니','이글은 메인글 3번 댓글~');
 INSERT INTO communityComments (idx,mref,writer,content)
-VALUES (comment_idx_seq.nextval,3,'김땡땡','이글은 메인글 3번 댓글~2');
+VALUES (comment_idx_seq.nextval,110,'김땡땡','이글은 메인글 3번 댓글~2');
 INSERT INTO communityComments (idx,mref,writer,content)
-VALUES (comment_idx_seq.nextval,1,'이하니','이글은 메인글 333번 댓글~');
+VALUES (comment_idx_seq.nextval,110,'이하니','이글은 메인글 333번 댓글~');
 INSERT INTO communityComments (idx,mref,writer,content)
-VALUES (comment_idx_seq.nextval,9,'김땡땡','이글은 메인글 333번 댓글~2');
+VALUES (comment_idx_seq.nextval,110,'김땡땡','이글은 메인글 333번 댓글~2');
 INSERT INTO communityComments (idx,mref,writer,content)
-VALUES (comment_idx_seq.nextval,9,'김땡땡','하이!!!하이~~');
+VALUES (comment_idx_seq.nextval,110,'김땡땡','하이!!!하이~~');
 
 -- 필요시 데이블 및 데이터 삭제
+select * from COMMUNITYCOMMENTS;
+
 DROP TABLE communityComments ;
 TRUNCATE  TABLE communityComments ;
 DROP SEQUENCE comment_idx_seq;
 
 -- ////////////주요 sql //////////////////////////////////////////
 -- 메인 3번글의 댓글 목록(리스트)
-SELECT * FROM communityComments c WHERE mref=3;   
+SELECT * FROM communityComments c WHERE mref=95;   
 
 -- 메인글 idx (3번)의 댓글 갯수 : *commentsCount*
 SELECT count(*) FROM communityComments c WHERE mref=3;
 
 -- 댓글 idx의 삭제 : 완료헀음.
-DELETE FROM communityComments c WHERE idx = 2;
+DELETE FROM communityComments c WHERE idx = 100;
 
 SELECT max(idx) FROM communityComments ;	
